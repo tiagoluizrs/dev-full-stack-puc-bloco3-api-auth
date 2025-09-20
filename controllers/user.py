@@ -64,7 +64,11 @@ def login_user(data):
         return {'error': 'Invalid credentials'}, 401
 
     token = generate_token(user.id)
-    return {'token': token}, 200
+    return {'token': token, 'user': {
+        'id': user.id,
+        'email': user.email,
+        'username': user.username
+    }}, 200
 
 def validate_user_token(data):
     token = data.get('token')
