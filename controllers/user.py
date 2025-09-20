@@ -1,4 +1,4 @@
-from models.user import db, User
+from models.User import db, User
 from passlib.hash import pbkdf2_sha256
 import jwt
 import os
