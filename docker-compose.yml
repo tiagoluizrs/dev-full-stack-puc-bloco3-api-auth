@@ -1,15 +1,17 @@
 version: '3.8'
 services:
-#  api-auth:
-#    build: .
-#    ports:
-#      - "5002:5002"
-#    environment:
-#      - FLASK_ENV=development
-#      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@auth-db:5432/authdb
-#    depends_on:
-#      - auth-db
-#    restart: always
+  api-auth:
+    build: .
+    ports:
+      - "5002:5002"
+    environment:
+      - FLASK_ENV=development
+      - SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@auth-db:5432/authdb
+    depends_on:
+      - auth-db
+    restart: always
+    networks:
+      - authnet
 
   auth-db:
     image: postgres:15
@@ -22,6 +24,12 @@ services:
     volumes:
       - auth_pgdata:/var/lib/postgresql/data
     restart: always
+    networks:
+      - authnet
 
 volumes:
   auth_pgdata:
+
+networks:
+  authnet:
+    external: true
