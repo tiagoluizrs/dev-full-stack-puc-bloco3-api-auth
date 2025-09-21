@@ -7,6 +7,9 @@ Este projeto é um microsserviço de autenticação com Flask, JWT e PostgreSQL.
 - Permite registrar usuários, autenticar e validar tokens JWT.
 - Senhas são armazenadas com hash SHA256.
 - O endpoint de validação retorna o ID do usuário autenticado.
+- 
+## Pré-requisitos
+- Docker e Docker Compose (opcional, para rodar com Docker)
 
 ## Como rodar com Docker
 
