@@ -17,6 +17,8 @@ Este projeto é um microsserviço de autenticação com Flask, JWT e PostgreSQL.
 docker-compose up --build
 ```
 
+>> Se ao rodar o build der erro na api, aguarde o banco subir e reinicie que irá funcionar.
+
 O serviço Flask e o banco PostgreSQL serão iniciados. As migrações são aplicadas automaticamente antes do servidor iniciar.
 
 ## Como testar os endpoints
