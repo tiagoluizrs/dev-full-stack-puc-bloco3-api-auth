@@ -1,12 +1,17 @@
-# Auth
+# # Sistema de Gestão de Hábitos Sustentáveis - API de Autenticação
 
-Este projeto é um microsserviço de autenticação com Flask, JWT e PostgreSQL.
+## O que o projeto faz (Descrição)
 
-## O que o projeto faz
+Esta API simples gerencia autenticação de usuários permitindo que o front-end realize login e registre novos usuários. Ela utiliza JWT para autenticação e validação de tokens.
 
 - Permite registrar usuários, autenticar e validar tokens JWT.
 - Senhas são armazenadas com hash SHA256.
-- O endpoint de validação retorna o ID do usuário autenticado.
+- O endpoint de validação retorna o usuário autenticado.
+- 
+### Diagrama
+Cada um dos 3 projetos terá o mesmo diagrama, apenas com uma diferença que é a marcação de qual serviço ele representa.
+
+![Diagrama](./diagrama-auth.jpg)
 
 ## Pré-requisitos
 - Docker e Docker Compose (opcional, para rodar com Docker)
@@ -42,3 +47,10 @@ curl -X POST http://localhost:5000/auth/login -H "Content-Type: application/json
 ```bash
 curl -X POST http://localhost:5000/auth/validate-token -H "Content-Type: application/json" -d "{\"token\":\"<seu_token_jwt>\"}"
 ```
+
+### Resetar token
+```bash
+curl -X POST http://localhost:5000/auth/reset-token -H "Content-Type: application/json" -d "{\"token\":\"<seu_token_jwt>\"}"
+```
+
+Github do projeto:  https://github.com/tiagoluizrs/dev-full-stack-puc-bloco3-api-auth
