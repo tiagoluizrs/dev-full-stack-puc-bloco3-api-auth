@@ -25,7 +25,7 @@ def extract_user_id_from_expired_token(token):
 def generate_token(user_id):
     payload = {
         'user_id': user_id,
-        'exp': datetime.utcnow() + timedelta(minutes=1)
+        'exp': datetime.utcnow() + timedelta(minutes=60)
     }
     return jwt.encode(payload, JWT_SECRET_KEY, algorithm='HS256')
 
