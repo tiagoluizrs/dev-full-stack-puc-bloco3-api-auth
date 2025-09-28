@@ -16,10 +16,27 @@ Cada um dos 3 projetos terá o mesmo diagrama, apenas com uma diferença que é 
 ## Pré-requisitos
 - Docker e Docker Compose (opcional, para rodar com Docker)
 
+O arquivo .env_example tem o que você precisa para gerar o arquivo .env, caso mude alguma configuração, ajuste no .env.
+
+```
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY="6GwaS2HCfXangHm96sZOdH+333shRS2vFdvtvTAwDUI="
+JWT_SECRET_KEY="YzTvTBspjLJ9y5RBgZJaUsCtcvpwZlPxSyRdW3bxU1w="
+SQLALCHEMY_DATABASE_URI=postgresql://postgres:postgres@localhost:5432/authdb
+SQLALCHEMY_TRACK_MODIFICATIONS=False
+```
+
 ## Como rodar com Docker
 
 1. Configure as variáveis de ambiente em um arquivo `.env` (exemplo: `JWT_SECRET_KEY`, `DATABASE_URL`).
 2. Execute:
+
+```cmd
+docker network create authnet
+```
+
+e depois
 
 ```cmd
 docker-compose up --build

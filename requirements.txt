@@ -1,6 +1,7 @@
 Flask
 Flask-Migrate
 flask
+flask_migrate
 flask-Migrate
 Flask-SQLAlchemy
 python-dotenv
